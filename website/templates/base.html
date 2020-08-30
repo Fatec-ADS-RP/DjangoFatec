@@ -1,0 +1,49 @@
+{% load static %}
+
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simple MOOC - Uma simples plataforma de ensino a distância" />
+    <title>WEB</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="header">
+
+        <div class="logotipo">
+            <img src="{% static 'images/logo-django.png' %}" />
+        </div>
+
+        <div class="menu">
+            <a href="{% url 'website:index' %}">HOME</a>
+            <a href="{% url 'website:topicos' %}">TÓPICOS</a>
+            <a href="{% url 'website:videos' %}">VIDEOS</a>
+            <a href="{% url 'website:contato' %}">CONTATO</a>
+        </div>
+
+        <div class="redes-sociais">
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+
+        <div class="menu-mobile">
+            <i class="fas fa-bars"></i>
+        </div>
+
+    </div><!-- fim header -->
+
+    {% block content %}{% endblock %}
+
+    <div class="footer">
+        <p>Todos os direitos reservados</p>
+    </div><!-- fim footer -->
+
+  </body>
+
+</html>

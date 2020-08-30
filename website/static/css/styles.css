@@ -1,0 +1,310 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+html, body{
+   height: 100%;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+    padding: 50px 0;
+    background-color: #073f2c;
+    border-bottom: 4px solid #FFD700;
+}
+
+.logotipo {
+    float: left;
+    text-align: center;
+    color: #000;
+    font: 20px verdana, arial, helvetica, sans-serif;
+}
+
+.logotipo img{
+    width: 80px;
+}
+
+.menu {
+    text-align: center;
+    float: left;
+    margin: 0 auto;
+}
+
+.menu-mobile{
+    display: none;
+}
+
+.menu a {
+    margin: 0 5px;
+    padding: 8px 20px;
+    text-decoration: none;
+    color: 	#fff;
+    background-color: #00432f;
+    font-size: 16px;
+    font-family: 'Pragati Narrow', sans-serif;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    float: left;
+}
+
+.menu a:hover {
+    text-decoration: none;
+    color: #00432f;
+    background-color: #fff;
+}
+
+.redes-sociais {
+    float: left;
+    text-align: center;
+    color: #000;
+    font: 20px verdana, arial, helvetica, sans-serif;
+}
+
+.redes-sociais a{
+    padding-left: 15px;
+    color: #fff;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: auto 25%;
+    margin: 50px 50px;
+}
+
+.container-table{
+    display: grid;
+    grid-template-columns: auto 25%;
+    margin: 50px 50px;
+}
+
+.painel-1, .painel-2 {
+    float: left;
+    border: 3px solid #bbb;
+    padding: 20px;
+    margin: 5px;
+    background: #eee;
+}
+
+.painel-1 p > a {
+    text-decoration: none;
+    background: #66cdaa;
+    color: #fff;
+    margin: 3px;
+    padding: 5px;
+}
+
+.painel-1 img{
+    width: 150px;
+}
+
+.painel-1 h1{
+    font: 25px 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: #363636;
+}
+
+.painel-1 h2{
+    text-align: center;
+    background-color: #ccc;
+    color: #000;
+    font-size: 20px;
+    font-family: 'Pragati Narrow', sans-serif;
+}
+
+.painel-1 p{
+    padding: 40px 0;
+    font: 20px 'Open Sans', sans-serif;
+    color: #363636;
+}
+
+.painel-1 p a{
+    background-color: #00FF7F;
+    color: #fff;
+    font-weight: bold;
+}
+
+.painel-2{
+    text-align: center;
+    min-width: 80px;
+}
+
+.painel-2 h2{
+    text-align: center;
+    background-color: #ccc;
+    color: #000;
+    font-size: 20px;
+    font-family: 'Pragati Narrow', sans-serif;
+}
+
+.painel-2 #escuro{
+    width: 15px;
+    text-align: center;
+    padding: 5px 10px;
+    margin: 1px 1px;
+    float: left;
+    background-color: #aaa;
+    color: #fff;
+    border: 1px solid #000;
+}
+
+.painel-2 #claro{
+    width: 15px;
+    text-align: center;
+    padding: 5px 10px;
+    margin: 1px 1px;
+    float: left;
+    background-color: #eee;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.box-1{
+  padding: 15px;
+  float: left;
+}
+
+.box-2{
+  padding: 15px;
+  padding-left: 40px;
+  float: left;
+}
+
+.box-2 h2{
+  padding: 10px;
+  text-align: center;
+}
+
+.box-2 li{
+  padding-top: 15px;
+  list-style-type: none;
+  font: 15px "Segoe UI",Arial,sans-serif;
+  color: #696969;
+  font-weight: bold; 
+}
+
+.painel-2 img{
+    width: 50px;
+    padding-left: 2px;
+    padding-top: 2px;
+}
+
+.footer {
+    padding: 70px 0;
+    background-color: #073f2c;
+    text-align: center;
+    color: #fff;
+    border: 3px solid #bbb;
+    border-left: 0;
+    border-right: 0;
+    font: 15px "Segoe UI",Arial,sans-serif;
+}
+
+.painel-1 > table td{
+    border-radius: 0;
+}
+
+.painel-1 > table th{
+    padding: 15px;
+    background: blue;
+    color: #fff;
+    border-radius: 0; 
+}
+
+.painel-1 > table tr{
+    text-align: center;
+    background-color: #FFFF00;
+    color: #000080;
+    border-radius: 0;
+}
+
+.painel-1 > table tr:nth-of-type(1){
+    background-color: #7FFF00;
+    color: #000;
+}
+
+.painel-1 > table tr:nth-of-type(2), table tr:nth-of-type(3), table tr:nth-of-type(4), table tr:nth-of-type(5), table tr:nth-of-type(6){
+    background: green;
+    color: #fff;
+}
+
+.painel-1 > table tr:nth-of-type(14), table tr:nth-of-type(15), table tr:nth-of-type(16){
+    background: #bbb;
+    color: #000;
+}
+
+.painel-1 > table tr:nth-of-type(17), table tr:nth-of-type(18), table tr:nth-of-type(19), table tr:nth-of-type(20){
+    background: red;
+    color: #fff;
+}
+
+.painel-1 > table td:nth-of-type(2), td:nth-of-type(3), td:nth-of-type(4), td:nth-of-type(5), td:nth-of-type(6), td:nth-of-type(7), td:nth-of-type(8), td:nth-of-type(9), td:nth-of-type(10), td:nth-of-type(11){
+    text-align: center;
+    background: #fff;
+    color: #000080;
+}
+
+.champion p{
+    margin-top: 15px;
+    padding: 10px 0;
+    color: #000;
+    background-color: #7FFF00;
+}
+
+.libertadores p{
+    margin-top: 15px;
+    padding: 10px 0;
+    color: #fff;
+    background-color: green;
+}
+
+.sulamericana p{
+    margin-top: 15px;
+    padding: 10px 0;
+    color: #000;
+    background-color: yellow;
+}
+
+.permanencia p{
+    margin-top: 15px;
+    padding: 10px 0;
+    color: #000;
+    background-color: #bbb;
+}
+
+.rebaixamento p{
+    margin-top: 15px;
+    padding: 10px 0;
+    color: #fff;
+    background-color: red;
+}
+
+@media screen and (max-width: 690px) {
+
+    .menu {
+        display: none;
+    }
+
+    .menu-mobile{
+        display: block;
+        float: left;
+        text-align: center;
+    }
+
+    .menu-mobile i{
+        color: #fff;
+        width: 100px;
+    }
+
+   
+
+}
+
+@media screen and (max-width: 900px) {
+
+    .menu a{
+        font-size: 12px;
+    }
+
+}
