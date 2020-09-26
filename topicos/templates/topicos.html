@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load my_tags %}
+
+{% block title %}Lista de Tarefas{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+
+    	<div class="painel-1" id="title">
+          	 <h1> <i class="fas fa-angle-double-left" ></i> TÓPICOS <i class="fas fa-angle-double-right" ></i></h1> 
+    	</div><!-- fim painel-1 -->
+		
+		<div class="painel-2">
+            {% for topico in topicos %}
+                {% if forloop.last %}
+                    <a href="{{ topico.slug }}" id="corrige-border-bottom"> {{ topico.name }}</a>
+                {% elif forloop.counter|modulo:2 == 0 %}
+                    <a href="{{ topico.slug }}" id="claro"> {{ topico.name }}</a>
+                {% else %}
+                    <a href="{{ topico.slug }}"> {{ topico.name }}</a>
+                {% endif %}
+			{% endfor %}<!-- fim painel-2 -->
+        </div>
+        
+    </div>
+
+{% endblock %}
