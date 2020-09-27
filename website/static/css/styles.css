@@ -79,6 +79,20 @@ html, body{
     margin: 50px 50px;
 }
 
+.container-contact{
+    display: grid;
+    grid-template-columns: 100%;
+    margin: 50px 50px;;
+}
+
+.painel-contact{
+    float: left;
+    border: 3px solid #bbb;
+    padding: 20px;
+    margin: 5px;
+    background: #eee;
+}
+
 .painel-1, .painel-2 {
     float: left;
     border: 3px solid #bbb;
@@ -181,7 +195,15 @@ html, body{
     background-color: #ddd;
 }
 
-
+.alerts {
+    font-size: 15px;
+    color: #073f2c;
+    background-color: #36e74d;
+    padding: 7px;
+    margin: 0 auto;
+    width: 40%;
+    text-align: center;
+}
 
 .footer {
     padding: 70px 0;

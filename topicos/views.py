@@ -21,3 +21,4 @@ def details(request, slug):
     return render(request, template_name, context)
 
 
+

@@ -6,16 +6,39 @@
 
 {% block content %}
 
-    <div class="container">
+    <div class="container-contact">
 
-    	<div class="painel-1">
-          <h1>CONTATOS</h1>
+    	<div class="painel-contact">
+		  
+			{% if is_valid %}
+				<div class="alerts"><i class="far fa-check-circle"></i> 
+					Sua mensagem foi enviada com sucesso!
+				</div>
+			{% endif %}
+			
+			<form action="#contato" method="post">
+				{% csrf_token %}
+					<h2>Envie sua dúvida, sugestão ou crítica.</h2>
+					{% for field in form %}
+					<div>
+						{{ field}}
+						{{ field.errors }}
+					</div>
+					{% endfor %}
+					
+					<div>
+						<input type="submit">
+							
+						</input>
+					</div>
+				
+			</form>
          
-    	</div><!-- fim painel-1 -->
+    	</div><!-- fim painel-contact -->
 
-    	<div class="painel-2">
-    		
-    	</div><!-- fim painel-2 -->
-    </div><!-- fim container -->
+    </div><!-- fim container-contact -->
 
 {% endblock %}
+
+				
+                  
