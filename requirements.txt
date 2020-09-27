@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 appdirs==1.4.4
 apturl==0.5.2
 astroid==2.4.2
@@ -113,3 +114,9 @@ xdiagnose==3.8.4.1
 xkit==0.0.0
 XlsxWriter==0.7.3
 zipp==1.2.0
+=======
+django
+gunicorn
+django-heroku
+whitenoise
+>>>>>>> a680a58f385ff2c15a12a75e197f144e3ee2e03a
