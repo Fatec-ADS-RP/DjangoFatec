@@ -59,6 +59,7 @@
       .offcanvas-header{ display:block; }
       .navbar-collapse {
         position: fixed;
+        font-size: 30px !important;
         top:0; 
         bottom: 0;
         left: 100%;
@@ -70,10 +71,18 @@
         background-color: #073f2c;
         transition: visibility .2s ease-in-out, transform .2s ease-in-out;
       }
+      .menu a{
+          font-size: 15px ;
+          padding-bottom: 10px !important;
+          padding-left: 15px !important;
+          padding-right: 15px !important;
+          margin-bottom: 10px !important;
+      }
       .navbar-collapse.show {
         visibility: visible;
         transform: translateX(-100%);
       }
+
     }
     
     </style>
@@ -81,8 +90,14 @@
 </head>
 
 <body>
+    <div class="header">
+        <div class="logotipo">
+            <img src="{% static 'images/logo-django.png' %}" />
+        </div>
+
+
     <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #073f2c;">
-        <a class="navbar-brand" href="#">Menu</a>
+        <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-trigger="#main_nav">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -98,34 +113,16 @@
           <li class="nav-item active"><a class="nav-link" href="{% url 'topicos:index' %}"> Tópicos </a></li>
           <li class="nav-item active"><a class="nav-link" href="{% url 'website:videos' %}"> Videos </a></li>
           <li class="nav-item active"><a class="nav-link" href="{% url 'website:contato' %}"> Contato </a></li>
-      </ul>
+        </ul>
+        
+    </div> <!-- navbar-collapse.// -->
+    
+    </nav>
       
-        </div> <!-- navbar-collapse.// -->
-      </nav>
-      
 
-    <div class="header">
 
-        <div class="logotipo">
-            <img src="{% static 'images/logo-django.png' %}" />
-        </div>
 
-        <div class="menu">
-            <a href="{% url 'website:index' %}">HOME</a>
-            <a href="{% url 'topicos:index' %}">TÓPICOS</a>
-            <a href="{% url 'website:videos' %}">VIDEOS</a>
-            <a href="{% url 'website:contato' %}">CONTATO</a>
-        </div>
 
-        <div class="redes-sociais">
-            <a href="#"><i class="fab fa-facebook-square"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-
-        <div class="menu-mobile">
-            <i class="fas fa-bars"></i>
-        </div>
 
     </div><!-- fim header -->
 
