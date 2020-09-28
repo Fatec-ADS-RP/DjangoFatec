@@ -26,7 +26,9 @@ SECRET_KEY = '$+r+anux9dvm#^mt0*i#k+d2-tzmf92xilj%1fyqgnji7@w7s_'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-	'portaldjango.herokuapp.com'
+    'djangoportal1.herokuapp.com',
+	'portaldjango.herokuapp.com',
+    '127.0.0.1',
 ]
 
 

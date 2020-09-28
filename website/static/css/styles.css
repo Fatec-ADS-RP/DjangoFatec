@@ -51,7 +51,7 @@ html, body{
 
 .menu a:hover {
     text-decoration: none;
-    color: #00432f;
+    color: #00432f !important;
     background-color: #fff;
 }
 
@@ -261,4 +261,10 @@ html, body{
         font-size: 12px;
     }
 
+}
+
+@media screen and (max-width: 992px) {
+.header{
+    grid-template-columns: 20% auto;
+}
 }
