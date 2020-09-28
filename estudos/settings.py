@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'djangoportal1.herokuapp.com',
+	'portaldjango.herokuapp.com',
     '127.0.0.1',
 ]
 
