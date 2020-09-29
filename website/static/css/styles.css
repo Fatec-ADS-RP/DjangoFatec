@@ -82,7 +82,7 @@ html, body{
 .container-contact{
     display: grid;
     grid-template-columns: 100%;
-    margin: 50px 0;
+    margin: 50px 15px;
 }
 
 .painel-contact{
