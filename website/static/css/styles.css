@@ -239,6 +239,6 @@ html, body{
 
 @media screen and (max-width: 992px) {
 .header{
-    grid-template-columns: 20% auto;
+    grid-template-columns: 40% auto;
 }
 }
