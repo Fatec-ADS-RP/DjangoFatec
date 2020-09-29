@@ -222,37 +222,7 @@ html, body{
     .menu {
         display: none;
     }
-
-    .menu-mobile{
-        display: block;
-        float: left;
-        text-align: center;
-    }
-
-    .menu-mobile i{
-        color: #fff;
-        width: 100px;
-    }
-
-    .menu-mobile a {
-        margin: 0 5px;
-        padding: 8px 20px;
-        text-decoration: none;
-        color: 	#fff;
-        background-color: #073f2c;
-        font-size: 8px;
-        font-family: 'Pragati Narrow', sans-serif;
-        float: left;
-    }
-    
-    .menu-mobile a:hover {
-        text-decoration: none;
-        color: #00432f;
-        background-color: #fff;
-    }
-
    
-
 }
 
 @media screen and (max-width: 900px) {
