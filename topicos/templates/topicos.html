@@ -21,6 +21,10 @@
 			display: block;
 		}
 		
+		.painel-1{
+			font-size: 12px;
+		}
+		
 		.painel-2{
 			display: block;
 		}
@@ -30,11 +34,7 @@
 
 
     <div class="container">
-
-    	<div class="painel-1" id="title">
-          	 <h1> <i class="fas fa-angle-double-left" ></i> TÓPICOS <i class="fas fa-angle-double-right" ></i></h1> 
-    	</div><!-- fim painel-1 -->
-		
+	    
 	<div class="painel-2">
             {% for topico in topicos %}
                 {% if forloop.last %}
@@ -46,6 +46,11 @@
                 {% endif %}
 	    {% endfor %}<!-- fim painel-2 -->
         </div>
+
+    	<div class="painel-1" id="title">
+          	 <h1> <i class="fas fa-angle-double-left" ></i> TÓPICOS <i class="fas fa-angle-double-right" ></i></h1> 
+    	</div><!-- fim painel-1 -->
+		
         
     </div>
 
