@@ -8,20 +8,33 @@
 
 {% block content %}
 
+    <style>
+	@media screen and (max-width: 1000px) {
+		
+		.container{
+		    display: grid;
+		    grid-template-columns: auto;
+		    margin: 50px 0;
+		}
+		
+		.painel-1{
+			display: block;
+		}
+		
+		.painel-1{
+			font-size: 12px;
+		}
+		
+		.painel-2{
+			display: block;
+		}
+	}
+
+    </style>
+
     <div class="container">
-
-    	<div class="painel-1" id="title">
-          <h2>{{ topico.name }}</h2>
-          <p>{{ topico.description }}</p>
-
-          <p>{{ topico.about }}</p>
-
-         
-    	</div><!-- fim painel-1 -->
-
-       
-    	
-    	<div class="painel-2">
+	    
+	<div class="painel-2">
             {% for topico in topicos %}
                 {% if forloop.last %}
                     <a href="{{ topico.slug }}" id="corrige-border-bottom"> {{ topico.name }}</a>
@@ -30,9 +43,17 @@
                 {% else %}
                     <a href="{{ topico.slug }}"> {{ topico.name }}</a>
                 {% endif %}
-			{% endfor %}<!-- fim painel-2 -->
-		</div>
-		
+	    {% endfor %}<!-- fim painel-2 -->
+	</div>
+
+    	<div class="painel-1" id="title">
+          <h2>{{ topico.name }}</h2>
+          <p>{{ topico.description }}</p>
+
+          <p>{{ topico.about }}</p>
+
+         
+    	</div><!-- fim painel-1 -->		
         
     </div><!-- fim container -->
 
