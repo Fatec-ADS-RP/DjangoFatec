@@ -186,6 +186,7 @@ html, body{
 .painel-2 a:hover{
     background-color: #aaa;
     text-decoration: none;
+    color: #000;
 }
 
 .painel-2 #claro{
