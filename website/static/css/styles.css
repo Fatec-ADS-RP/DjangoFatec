@@ -37,15 +37,16 @@ html, body{
 }
 
 .menu a {
-    margin: 0 5px;
-    padding: 8px 20px;
+    margin: 0 10px;
+    padding: 7px;
+    width: 90%;
     text-decoration: none;
     color: 	#fff;
     background-color: #00432f;
     font-size: 16px;
     font-family: 'Pragati Narrow', sans-serif;
     border: 2px solid #fff;
-    border-radius: 15px;
+    border-radius: 5px;
     float: left;
 }
 
