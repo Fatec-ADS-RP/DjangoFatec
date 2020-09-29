@@ -69,7 +69,7 @@ html, body{
 
 .container{
     display: grid;
-    grid-template-columns: auto 25%;
+    grid-template-columns: 25% auto;
     margin: 50px 50px;
 }
 
