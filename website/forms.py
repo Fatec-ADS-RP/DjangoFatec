@@ -22,3 +22,5 @@ class Contact(forms.Form):
         send_mail_template(
             subject, template_name, context, [settings.CONTACT_EMAIL]
         )
+
+#testando github
