@@ -19,5 +19,6 @@ class Contato(models.Model):
         null=False,
         blank=False
     )
+#teste git Edson
 
     objetos = models.Manager()
