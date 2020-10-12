@@ -85,6 +85,7 @@
           padding-right: 15px !important;
           margin-bottom: 10px !important;
           margin-left: 0;
+
       }
 
       .navbar-collapse.show {
@@ -99,35 +100,45 @@
 </head>
 
 <body>
+    <div class="user_logado">
+        {% if user.is_authenticated %}
+            <span>Olá, {{ user.get_username }}. <a href="{% url 'accounts:logout' %}">SAIR <i class="fas fa-sign-out-alt"></i></a></span>
+        {% endif %}
+    </div>
+
+    {% if user.is_authenticated %}
     <div class="header">
+
         <div class="logotipo">
             <a href="{% url 'website:index' %}"><img src="{% static 'images/logo-django.png' %}" /></a>
         </div>
 
+        
+        <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #073f2c;">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-trigger="#main_nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #073f2c;">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-trigger="#main_nav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse" id="main_nav">
-      
-      <div class="offcanvas-header mt-3">  
-          <button class="btn btn-outline-danger btn-close float-right"> &times Fechar </button>
-          <h5 class="py-2 text-white">Menu</h5>
-      </div>
-      
-      <ul class="navbar-nav menu">
-          <li class="nav-item active"> <a class="nav-link" href="{% url 'website:index' %}">Home </a> </li>
-          <li class="nav-item active"><a class="nav-link" href="{% url 'topicos:index' %}"> Tópicos </a></li>
-          <li class="nav-item active"><a class="nav-link" href="{% url 'website:videos' %}"> Videos </a></li>
-          <li class="nav-item active"><a class="nav-link" href="{% url 'website:contato' %}"> Contato </a></li>
-      </ul>
+            <div class="navbar-collapse" id="main_nav">
         
-    </div> <!-- navbar-collapse.// -->
+                <div class="offcanvas-header mt-3">  
+                    <button class="btn btn-outline-danger btn-close float-right"> &times Fechar </button>
+                    <h5 class="py-2 text-white">Menu</h5>
+                </div>
+            
+                <ul class="navbar-nav menu">
+                    <li class="nav-item active"> <a class="nav-link" href="{% url 'website:index' %}">Home </a> </li>
+                    <li class="nav-item active"><a class="nav-link" href="{% url 'topicos:index' %}"> Tópicos </a></li>
+                    <li class="nav-item active"><a class="nav-link" href="{% url 'website:videos' %}"> Videos </a></li>
+                    <li class="nav-item active"><a class="nav-link" href="{% url 'website:contato' %}"> Contato </a></li>
+                </ul>
+            
+            </div> <!-- navbar-collapse.// -->
     
-    </nav>
+        </nav>
         
+
         <div class="redes-sociais">
             <a href="#"><i class="fab fa-facebook-square"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -135,12 +146,15 @@
         </div>
 
     </div><!-- fim header -->
+    {% endif %}
 
     {% block content %}{% endblock %}
 
+    {% if user.is_authenticated %}
     <div class="footer">
         <p>Todos os direitos reservados</p>
     </div><!-- fim footer -->
+    {% endif %}
 
   </body>
 
