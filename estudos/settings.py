@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'website',
     'topicos',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -144,3 +145,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'Nome <email@gmail.com>'
 
 CONTACT_EMAIL = 'equipe.gdek@gmail.com'
+
+LOGIN_URL = '/login/'
+
+LOGIN_REDIRECT_URL = '/index/'
+
+LOGOUT_REDIRECT_URL = '/'

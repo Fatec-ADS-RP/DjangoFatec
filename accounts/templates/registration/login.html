@@ -1,0 +1,61 @@
+{% load static %}
+
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal DJANGO - Portal com conteúdo do Framework Django-Python" />
+    <title>WEB</title>
+    <link rel="stylesheet" href="{% static 'css/auth2.css' %}"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="header">
+        <p><img src="{% static 'images/logo-django.png' %}" /></p>
+    </div>
+
+    <div class="container">
+
+        {% if form.errors %}
+            <p style="color:red;text-align:center;margin-bottom:15px;">
+                Usuário ou senha incorretos. Tente novamente!
+            </p>
+        {% endif %}
+    
+        {% if next %}
+            {% if user.is_authenticated %}
+                <p>Sua conta não tem acesso a esta página. Para prosseguir,
+                por favor faça login com uma conta que tenha acesso.</p>
+            {% else %}
+                <p>Por favor, faça o login para ver esta página.</p>
+            {% endif %}
+        {% endif %}
+       
+
+        <form action="{% url 'accounts:login' %}" method="post">
+        {% csrf_token %}
+                
+           
+            <div>{{ form.username }}</div>
+            <div>{{ form.password }}</div>
+
+            <div>
+                <input type="submit" name="acao" value="Entrar">
+                <input type="hidden" name="next" value="{{ next }}" />
+            </div>
+            
+            <div class="links">
+                <i class="fas fa-smile"></i><a href="{% url 'accounts:register' %}">Novo aqui?</a>  <i class="fas fa-lock"></i><a href="#">Esqueceu a senha?</a>
+            </div>
+        </form>
+
+        
+    </div>
+
+</body>
+
+</html>

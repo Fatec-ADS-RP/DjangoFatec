@@ -23,4 +23,3 @@ class Contact(forms.Form):
             subject, template_name, context, [settings.CONTACT_EMAIL]
         )
 
-#testando github
