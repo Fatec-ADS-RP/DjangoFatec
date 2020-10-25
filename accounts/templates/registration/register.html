@@ -23,10 +23,11 @@
         .alertSucess {
             font-size: 15px;
             font-family: Arial, Helvetica, sans-serif;
-            color: #073f2c;
+            color: #000;
+            background-color: #d2ffdd;
             padding: 7px;
             margin: 0 auto;
-            width: 40%;
+            width: 100%;
             text-align: center;
         }
 
@@ -38,16 +39,17 @@
         .alertError {
             font-size: 15px;
             font-family: Arial, Helvetica, sans-serif;
-            color: #e0250c;
+            color: #000;
+            background-color: #fc7f60;
             padding: 7px;
             margin: 0 auto;
-            width: 40%;
-            text-align: center;
+            width: 100%;
+            text-align: left;
         }
 
         .alertError i{
-            font-size: 30px;
-            margin: 15px;
+            font-size: 15px;
+            margin: 5px;
         }
 
         .log-in{
@@ -84,12 +86,10 @@
         <p><img src="{% static 'images/logo-django.png' %}" /></p>
     </div>
 
-    <div class="container">
-
         {% if form.errors %}
             <div class="alertError">
                 <i class="fas fa-exclamation-circle"></i>
-                <p>Não foi possível realizar o cadastro!</p>
+                Não foi possível realizar o cadastro!
             </div>
         {% endif %}
 
@@ -105,6 +105,8 @@
 
             
         {% else %}
+
+        <div class="container">
 
             <form action="{% url 'accounts:register' %}" method="post">
                 {% csrf_token %}
@@ -125,10 +127,10 @@
                     <div class="links"><i class="fas fa-sign-in-alt"></i><a href="/">Ir para Login</a></div>
                     
             </form>
-    
-        {% endif %}
         
-    </div>
+        </div>
+
+        {% endif %}
 
 </body>
 
