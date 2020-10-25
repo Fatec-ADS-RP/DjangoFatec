@@ -10,6 +10,25 @@
     <link rel="stylesheet" href="{% static 'css/auth2.css' %}"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
+    <style>
+
+        .alertError {
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #e0250c;
+            padding: 7px;
+            margin: 0 auto;
+            width: 40%;
+            text-align: center;
+        }
+
+        .alertError i{
+            font-size: 30px;
+            margin: 5px;
+        }
+
+    </style>
+
 </head>
 
 <body>
@@ -21,17 +40,25 @@
     <div class="container">
 
         {% if form.errors %}
-            <p style="color:red;text-align:center;margin-bottom:15px;">
-                Usuário ou senha incorretos. Tente novamente!
-            </p>
+            <div class="alertError">
+                <i class="fas fa-exclamation-circle"></i>
+                <p>Usuário ou senha incorretos. Tente novamente!</p>
+            </div>
         {% endif %}
     
         {% if next %}
             {% if user.is_authenticated %}
-                <p>Sua conta não tem acesso a esta página. Para prosseguir,
-                por favor faça login com uma conta que tenha acesso.</p>
+                <div class="alertError">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>Sua conta não tem acesso a esta página. Para prosseguir,
+                       por favor faça login com uma conta que tenha acesso.
+                    </p>
+                </div>
             {% else %}
-                <p>Por favor, faça o login para ver esta página.</p>
+                <div class="alertError">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>Por favor, faça o login para ver esta página.</p>
+                </div>
             {% endif %}
         {% endif %}
        

@@ -23,7 +23,8 @@ html, body{
 .container{
    display: grid;
    grid-template-columns: 100%;
-   margin: 100px auto;
+   margin: 70px auto;
+   
 }
 
 .links{
@@ -44,7 +45,7 @@ form{
 	width: 100%;
 	max-width: 600px;
    margin: 0 auto; 
-   padding: 25px;
+   padding: 15px;
    text-align: center;
    border: 10px solid rgba(232,232,232, 0.8);
    /*border: 10px solid rgba(0,69,45, 0.5);*/
@@ -124,13 +125,13 @@ form input[type=submit]:hover{
    .container{
       display: grid;
       grid-template-columns: 100%;
-      margin: 100px auto;
+      margin: 50px auto;
    }
 
    form{
       width: 300px;
       margin: 0 auto; 
-      padding: 15px;
+      padding: 10px;
    }
 
    form input[type=submit]{

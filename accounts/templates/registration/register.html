@@ -20,6 +20,60 @@
             overflow: visible;
         }
 
+        .alertSucess {
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #073f2c;
+            padding: 7px;
+            margin: 0 auto;
+            width: 40%;
+            text-align: center;
+        }
+
+        .alertSucess i{
+            font-size: 30px;
+            margin: 15px;
+        }
+
+        .alertError {
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #e0250c;
+            padding: 7px;
+            margin: 0 auto;
+            width: 40%;
+            text-align: center;
+        }
+
+        .alertError i{
+            font-size: 30px;
+            margin: 15px;
+        }
+
+        .log-in{
+            padding: 7px;
+            margin: 0 auto;
+            width: 40%;
+            text-align: center;
+        }
+
+        .log-in i{
+            color: rgb(38, 104, 44);
+            font-size: 100px;
+            margin: 25px;
+        }
+
+        #mostrar{
+            display: none;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(43, 42, 42);
+        }
+
+        #passar_mouse:hover #mostrar{
+            display: block;
+        }
+
     </style>
 
 </head>
@@ -33,29 +87,46 @@
     <div class="container">
 
         {% if form.errors %}
-            <p style="color:red;text-align:center;margin-bottom:15px;">
-                Cadastro não realizado! Tente novamente!
-            </p>
+            <div class="alertError">
+                <i class="fas fa-exclamation-circle"></i>
+                <p>Não foi possível realizar o cadastro!</p>
+            </div>
         {% endif %}
 
-        <form action="{% url 'accounts:register' %}" method="post">
-        {% csrf_token %}
-                
+        {% if form.is_valid %}
+            <div class="alertSucess">
+                <i class="far fa-check-circle"></i>
+                <p>Cadastro realizado sucesso!</p>
+            </div>
+            <div class="log-in" id="passar_mouse">
+                <a href="/"><i class="fas fa-sign-in-alt"></i></a>
+                <div id="mostrar">Logar</div>
+            </div>
+
             
-            <div>{{ form.username }}</div>
-            <div>{{ form.first_name }}</div>
-            <div>{{ form.last_name }}</div>
-            <div>{{ form.email }}</div>
-            <div>{{ form.password1 }}</div>
-            <div>{{ form.password2 }}</div>
+        {% else %}
 
-
-            <div><input type="submit" name="acao" value="Cadastrar"></div>
-
-            <div class="links"><i class="fas fa-sign-in-alt"></i><a href="/">Ir para Login</a></div>
-            
-        </form>
-
+            <form action="{% url 'accounts:register' %}" method="post">
+                {% csrf_token %}
+                        
+                    
+                    <div>{{ form.username }}</div>
+                    <div>{{ form.first_name }}</div>
+                    <div>{{ form.last_name }}</div>
+                    <div>{{ form.email }}</div>
+                    <div>{{ form.password1 }}</div>
+                    <div>{{ form.password2 }}</div>
+        
+        
+                    <div>
+                        <input type="submit" name="acao" value="Cadastrar" />
+                    </div>
+        
+                    <div class="links"><i class="fas fa-sign-in-alt"></i><a href="/">Ir para Login</a></div>
+                    
+            </form>
+    
+        {% endif %}
         
     </div>
 

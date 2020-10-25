@@ -27,16 +27,17 @@ def logar(request):
     return render(request, 'registration/login.html', {'form': form})
 
 def cadastrar(request):
+    context = {}
     if request.method == "POST":
         form = FormRegister(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/register_sucess')
+            context['is_valid'] = True        
     else:
         form = FormRegister()
 
-    return render(request, 'registration/register.html', {'form': form})
+    context['form'] = form
 
-def registerSucess(request):
-    return render(request, 'registration/register_sucess.html')
+    return render(request, 'registration/register.html', context)
+
 

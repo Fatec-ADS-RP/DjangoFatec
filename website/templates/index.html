@@ -6,9 +6,9 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
 
 <style>
+	
 	@media screen and (max-width: 1000px) {
 		
 		.container{
@@ -46,49 +46,5 @@
     	
 	</div><!-- fim container -->
 	
-{% else %}
-
-<style>
-	
-		
-		.alerts {
-            font-size: 15px;
-            color: #fff;
-			background-color: rgb(250, 9, 9);
-            padding: 7px;
-            margin: 50px auto;
-            width: 40%;
-            text-align: center;
-			border: 2px solid #f0a720;
-        }
-
-		.alerts p i{
-			font-size: 35px;
-			margin: 10px;
-		}
-
-		.alerts a{
-			text-decoration: none;
-			color: #fff;
-		}
-
-		.alerts a:hover{
-			color:#041811;
-			text-decoration: underline;
-		}
-		
-	
-
-</style>
-
-    <div class="alerts">
-
-		<p><i class="fas fa-exclamation-triangle"></i></p>
-	    
-		Você não está logado! <a href="/login">Clique aqui</a> para realizar o login.
-
-	</div><!-- fim container -->
-
-{% endif %}
 
 {% endblock %}

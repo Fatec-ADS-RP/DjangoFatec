@@ -1,13 +1,17 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 from .forms import Contact
 
+@login_required(login_url='accounts:login')
 def index(request):
 	return render(request, 'index.html')
 
+@login_required(login_url='accounts:login')
 def videos(request):
 	return render(request, 'videos.html')
 
+@login_required(login_url='accounts:login')
 def contact(request):
     context = {}
     if request.method == 'POST':
