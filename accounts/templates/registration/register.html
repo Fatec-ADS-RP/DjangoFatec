@@ -111,16 +111,17 @@
                 {% if form.username.errors %}
                     <i class="fas fa-user"></i> 
                     Usuário: Já existe usuário com esse nome.
+                    </br>
                 {% endif %}
-                </br>
                 {% if form.email.errors %}
                     <i class="fas fa-envelope"></i>
                     E-mail: Informe um endereço de email válido.
+                    </br>
                 {% endif %}
-                </br>
                 {% if form.password2.errors %}
                     <i class="fas fa-key"></i>
                     Senha: A senha precisa conter pelo menos 8 caracteres (Letras e Números)
+                    </br>
                 {% endif %}
             </div>
         {% endif %}
