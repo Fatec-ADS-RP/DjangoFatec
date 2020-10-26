@@ -9,6 +9,7 @@ html, body{
 }
 
 .header {
+   padding-top: 8px;
    display: grid;
    grid-template-columns: 100%;
    text-align: center;
