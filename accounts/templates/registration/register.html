@@ -51,11 +51,16 @@
             font-size: 15px;
             font-family: Arial, Helvetica, sans-serif;
             color: #000;
-            background-color: #f8bf75;
+            background-color: #d2ffdd;
             padding: 7px;
             margin: 0 auto;
             width: 100%;
             text-align: left;
+        }
+
+        .alertMessage i{
+            font-size: 15px;
+            margin: 5px;
         }
 
         .alertError i{
@@ -103,7 +108,20 @@
                 Não foi possível realizar o cadastro! 
             </div>
             <div class="alertMessage">
-                {{ form.errors }}
+                {% if form.username.errors %}
+                    <i class="fas fa-user"></i> 
+                    Usuário: Já existe usuário com esse nome.
+                {% endif %}
+                </br>
+                {% if form.email.errors %}
+                    <i class="fas fa-envelope"></i>
+                    E-mail: Informe um endereço de email válido.
+                {% endif %}
+                </br>
+                {% if form.password2.errors %}
+                    <i class="fas fa-key"></i>
+                    Senha: A senha precisa conter pelo menos 8 caracteres (Letras e Números)
+                {% endif %}
             </div>
         {% endif %}
 
