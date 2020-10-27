@@ -61,6 +61,7 @@
         .alertMessage i{
             font-size: 15px;
             margin: 5px;
+            list-style-type: none;
         }
 
         .alertError i{
@@ -92,6 +93,15 @@
             display: block;
         }
 
+        .corrigeDisplay{
+            display: inline-block;
+            
+        }
+
+        .corrigeDisplay ul{
+            list-style-type: none;
+        }
+
     </style>
 
 </head>
@@ -109,19 +119,25 @@
             </div>
             <div class="alertMessage">
                 {% if form.username.errors %}
-                    <i class="fas fa-user"></i> 
-                    Usuário: Já existe usuário com esse nome.
-                    </br>
+                    <i class="fas fa-user"></i>
+                    <div class="corrigeDisplay">
+                        {{ form.username.errors }}
+                    </div>
                 {% endif %}
                 {% if form.email.errors %}
-                    <i class="fas fa-envelope"></i>
-                    E-mail: Informe um endereço de email válido.
                     </br>
+                    <i class="fas fa-envelope"></i>
+                    <div class="corrigeDisplay"> 
+                        {{ form.email.errors }}
+                    </div>
+                   
                 {% endif %}
                 {% if form.password2.errors %}
-                    <i class="fas fa-key"></i>
-                    Senha: Precisa conter pelo menos 8 caracteres (Letras e Números), não pode ser parecida com o nome do usuário e/ou as senhas não foram digitadas iguais.
                     </br>
+                    <i class="fas fa-key"></i>
+                    <div class="corrigeDisplay"> 
+                        {{ form.password2.errors }}
+                    </div>
                 {% endif %}
             </div>
         {% endif %}
