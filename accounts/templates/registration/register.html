@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <style>
-       
 
         html, body{
             height: 100%;
@@ -25,15 +24,15 @@
             font-family: Arial, Helvetica, sans-serif;
             color: #000;
             background-color: #d2ffdd;
-            padding: 7px;
+            padding: 7px 0;
             margin: 0 auto;
-            width: auto;
-            text-align: center;
+            width: 100%;
+            text-align: left;
         }
 
         .alertSucess i{
-            font-size: 30px;
-            margin: 15px;
+            font-size: 15px;
+            margin: 5px;
         }
 
         .alertError {
@@ -45,6 +44,11 @@
             margin: 0 auto;
             width: 100%;
             text-align: left;
+        }
+
+        .alertError i{
+            font-size: 15px;
+            margin: 5px;
         }
 
         .alertMessage{
@@ -61,36 +65,26 @@
         .alertMessage i{
             font-size: 15px;
             margin: 5px;
-            list-style-type: none;
-        }
+        } 
 
-        .alertError i{
+        .dadosCadastro{
             font-size: 15px;
-            margin: 5px;
-        }
-
-        .log-in{
-            padding: 7px;
-            margin: 0 auto;
-            width: 40%;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #000;
+            padding: 0;
+            margin: 10% auto;
+            width: 70%;
             text-align: center;
         }
 
-        .log-in i{
-            color: rgb(38, 104, 44);
-            font-size: 100px;
-            margin: 25px;
+        .dadosCadastro a{
+            text-decoration: none;
+            color: rgb(2, 98, 223);
         }
 
-        #mostrar{
-            display: none;
-            font-size: 15px;
-            font-family: Arial, Helvetica, sans-serif;
-            color: rgb(43, 42, 42);
-        }
-
-        #passar_mouse:hover #mostrar{
-            display: block;
+        .dadosCadastro a:hover{
+            text-decoration: none;
+            color: rgb(45, 163, 184);
         }
 
         .corrigeDisplay{
@@ -144,18 +138,31 @@
 
         {% if form.is_valid %}
             <div class="alertSucess">
-                <i class="far fa-check-circle"></i>
-                <p>Cadastro realizado sucesso!</p>
-            </div>
-            <div class="log-in" id="passar_mouse">
-                <a href="/"><i class="fas fa-sign-in-alt"></i></a>
-                <div id="mostrar">Logar</div>
+                <i class="fas fa-check-circle"></i>
+                Cadastro realizado sucesso! 
             </div>
 
+            <div class="dadosCadastro">
+                <p> 
+                    Parabéns <b>{{ form.first_name.value }} {{ form.last_name.value }},</b>
+                </p>
+                </br>
+                <p>
+                    Seu cadastro foi finalizado, foi enviado o link de ativação para o <b>e-mail: {{ form.email.value }}.</b>
+                </p>
+                <p>
+                    Após ativar o cadastro utilize seu usuário<b> {{ form.username.value }}</b> para realizar o <a href="/login/"><b>login</b></a>.
+                </p>
+            </div>
             
         {% else %}
 
-        <div class="container">
+        <div class="alertMessage">
+            <i class="fas fa-edit"></i>
+            Preencha os campos para realizar o cadastro!
+        </div>
+
+        <div class="container">  
 
             <form action="{% url 'accounts:register' %}" method="post">
                 {% csrf_token %}
