@@ -51,7 +51,7 @@
             padding-right: 5px;
         }
 
-        .alertMessage, .alertCadastro{
+        .alertUser, .alertEmail, .alertPassword, .alertCadastro{
             font-size: 15px;
             font-family: Arial, Helvetica, sans-serif;
             color: #000;
@@ -61,15 +61,19 @@
             text-align: left;
         }
 
-        .alertMessage{
+        .alertUser, .alertEmail, .alertPassword{
             font-size: 13px;
         }
 
-        .alertMessage i{
+        .alertUser i, .alertEmail i, .alertPassword i{
             font-size: 13px;
             padding: 15px;
             padding-right: 5px;
-        } 
+        }
+
+        .alertEmail i, .alertPassword i{
+            padding-top: 0;
+        }
 
         .alertCadastro i{
             font-size: 15px;
@@ -106,6 +110,18 @@
             list-style-type: none;
         }
 
+        @media screen and (max-width: 500px) {
+
+            .alertUser, .alertEmail, .alertPassword {
+                font-size: 10px;
+            }
+
+            .alertUser i, .alertEmail i, .alertPassword i{
+                font-size: 10px;
+            }
+
+        }
+
     </style>
 
 </head>
@@ -121,24 +137,24 @@
                 <i class="fas fa-exclamation-circle"></i>
                 Não foi possível realizar o cadastro! 
             </div>
-            <div class="alertMessage">
+            <div class="alertUser">
                 {% if form.username.errors %}
                     <i class="fas fa-user"></i>
                     <div class="corrigeDisplay">
                         {{ form.username.errors }}
                     </div>
-                    </br>
                 {% endif %}
-                {% if form.email.errors %}
-                    
+            </div>
+            <div class="alertEmail">
+                {% if form.email.errors %}     
                     <i class="fas fa-envelope"></i>
                     <div class="corrigeDisplay"> 
                         {{ form.email.errors }}
                     </div>
-                    </br>
                 {% endif %}
+            </div>
+            <div class="alertPassword">
                 {% if form.password2.errors %}
-                    
                     <i class="fas fa-key"></i>
                     <div class="corrigeDisplay"> 
                         {{ form.password2.errors }}
