@@ -24,7 +24,6 @@
             font-family: Arial, Helvetica, sans-serif;
             color: #000;
             background-color: #d2ffdd;
-            padding: 7px 0;
             margin: 0 auto;
             width: 100%;
             text-align: left;
@@ -32,7 +31,8 @@
 
         .alertSucess i{
             font-size: 15px;
-            margin: 5px;
+            padding: 15px;
+            padding-right: 5px;
         }
 
         .alertError {
@@ -40,7 +40,6 @@
             font-family: Arial, Helvetica, sans-serif;
             color: #000;
             background-color: #fc7f60;
-            padding: 7px 0;
             margin: 0 auto;
             width: 100%;
             text-align: left;
@@ -48,23 +47,34 @@
 
         .alertError i{
             font-size: 15px;
-            margin: 5px;
+            padding: 15px;
+            padding-right: 5px;
         }
 
-        .alertMessage{
+        .alertMessage, .alertCadastro{
             font-size: 15px;
             font-family: Arial, Helvetica, sans-serif;
             color: #000;
             background-color: #d2ffdd;
-            padding: 7px 0;
             margin: 0 auto;
             width: 100%;
             text-align: left;
         }
 
+        .alertMessage{
+            font-size: 13px;
+        }
+
         .alertMessage i{
+            font-size: 13px;
+            padding: 15px;
+            padding-right: 5px;
+        } 
+
+        .alertCadastro i{
             font-size: 15px;
-            margin: 5px;
+            padding: 15px;
+            padding-right: 5px;
         } 
 
         .dadosCadastro{
@@ -160,7 +170,7 @@
 
         {% if not form.errors %}
 
-        <div class="alertMessage">
+        <div class="alertCadastro">
             <i class="fas fa-edit"></i>
             Preencha os campos para realizar o cadastro!
         </div>
