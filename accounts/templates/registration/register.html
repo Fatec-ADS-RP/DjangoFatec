@@ -117,17 +117,18 @@
                     <div class="corrigeDisplay">
                         {{ form.username.errors }}
                     </div>
+                    </br>
                 {% endif %}
                 {% if form.email.errors %}
-                    </br>
+                    
                     <i class="fas fa-envelope"></i>
                     <div class="corrigeDisplay"> 
                         {{ form.email.errors }}
                     </div>
-                   
+                    </br>
                 {% endif %}
                 {% if form.password2.errors %}
-                    </br>
+                    
                     <i class="fas fa-key"></i>
                     <div class="corrigeDisplay"> 
                         {{ form.password2.errors }}
@@ -157,10 +158,14 @@
             
         {% else %}
 
+        {% if not form.errors %}
+
         <div class="alertMessage">
             <i class="fas fa-edit"></i>
             Preencha os campos para realizar o cadastro!
         </div>
+
+        {% endif %}
 
         <div class="container">  
 
