@@ -1,11 +1,19 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetConfirmView
 from django.urls import reverse_lazy
 from django.views import generic
 
-from .forms import FormLogin, FormRegister
+from .forms import FormLogin, FormRegister, FormPasswordReset, FormPasswordConfirm
+
+class PasswordConfirm(PasswordResetConfirmView):
+    form_class = FormPasswordConfirm
+    template_name = 'password/password_reset_confirm.html'
+
+class PasswordReset(PasswordResetView):
+    form_class = FormPasswordReset
+    template_name = 'password/password_reset_form.html'
 
 class Login(LoginView):
     form_class = FormLogin
@@ -20,7 +28,7 @@ def logar(request):
             return redirect('website:index')
         else:
             form = FormLogin()
-            print('Entrou')
+
     else:
         form = FormLogin()
 
@@ -32,7 +40,7 @@ def cadastrar(request):
         form = FormRegister(request.POST)
         if form.is_valid():
             form.save()
-            context['is_valid'] = True        
+            context['is_valid'] = True
     else:
         form = FormRegister()
 
