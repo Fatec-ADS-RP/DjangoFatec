@@ -53,7 +53,7 @@ form{
    background: #fff;
 }
 
-form input[type=text], input[type=password]{
+form input[type=text], input[type=password], input[type=email]{
 	font-family: Arial, Helvetica, sans-serif;
    font-size: 15px;
 	display: inline-block;
@@ -71,7 +71,7 @@ form i{
    margin: 10px;
 }
 
-form input[type=text]:focus, input[type=password]:focus{
+form input[type=text]:focus, input[type=password]:focus, input[type=email]:focus{
 	outline: 0;
 }
 
