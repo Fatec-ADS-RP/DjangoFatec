@@ -1,6 +1,3 @@
 __pycache__
 venv
-<<<<<<< HEAD
-
-=======
->>>>>>> 3b92d33721330e57f1f1256ae14d23f7c9873367
+db.sqlite3
