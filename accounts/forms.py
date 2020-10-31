@@ -45,7 +45,7 @@ class FormRegister(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ['username', 'last_name', 'first_name', 'email', 'password1', 'password2']
         error_messages = {
             'username': {
                 'unique': 'Já existe no cadastro um usuário com este nome.',
