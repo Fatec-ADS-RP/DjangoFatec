@@ -2,5 +2,6 @@ django
 gunicorn
 django-heroku
 whitenoise
+mysqlclient
 
 
