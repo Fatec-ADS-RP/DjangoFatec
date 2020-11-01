@@ -85,25 +85,12 @@ WSGI_APPLICATION = 'estudos.wsgi.application'
 
 DATABASES = {
     'default': {
-<<<<<<< HEAD
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db_portaldjango',
         'USER': 'root',
         'PASSWORD': 'django2020',
         'HOST': 'portaldjango.herokuapp.com', #or an IP Address that your DB is hosted on
         'PORT': '3306',
-=======
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        #'ENGINE': 'django.db.backends.mysql',
-        #'NAME': 'db_portaldjango',
-        #'USER': 'root',
-        #'PASSWORD': 'django2020',
-        #'HOST': 'portaldjango.herokuapp.com', #or an IP Address that your DB is hosted on
-        #'PORT': '3306',
->>>>>>> 8a7d08c314f1d8b3b516bf2ce582d5a5b0b6004a
     }
 }
 
