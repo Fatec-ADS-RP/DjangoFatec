@@ -4,6 +4,6 @@ django-heroku
 whitenoise
 mysqlclient
 psycopg2
-Pillow
+Pillow==3.1.2
 
 
