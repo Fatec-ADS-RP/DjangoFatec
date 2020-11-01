@@ -92,7 +92,8 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'django2020',
         'HOST': 'portaldjango.herokuapp.com', #or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        #'PORT': '3306',
+        'PORT': '5000',
     }
 }
 
