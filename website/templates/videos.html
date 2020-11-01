@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Lista de Tarefas{% endblock %}
+
+{% block content %}
+
+    <style>
+        @media screen and (max-width: 1000px) {
+
+            .container{
+                display: grid;
+                grid-template-columns: auto;
+                margin: 50px 0;
+            }
+
+            .painel-1{
+                display: block;
+            }
+
+            .painel-2{
+                display: none;
+            }
+        }
+
+    </style>
+
+    <div class="container">
+
+    	<div class="painel-1">
+          VIDEOS
+         
+    	</div><!-- fim painel-1 -->
+
+    	<div class="painel-2">
+    		
+    	</div><!-- fim painel-2 -->
+    </div><!-- fim container -->
+
+{% endblock %}

@@ -1,0 +1,227 @@
+
+
+{% load static %}
+
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal DJANGO - Portal com conteúdo do Framework Django-Python" />
+    <title>WEB</title>
+    <link rel="stylesheet" href="{% static 'css/auth2.css' %}"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <style>
+
+        html, body{
+            height: 100%;
+            overflow: visible;
+        }
+
+        .alertSucess {
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #000;
+            background-color: #d2ffdd;
+            margin: 0 auto;
+            width: 100%;
+            text-align: left;
+        }
+
+        .alertSucess i{
+            font-size: 15px;
+            padding: 15px;
+            padding-right: 5px;
+        }
+
+        .alertError {
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #000000;
+            background-color: #fc7f60;
+            margin: 0 auto;
+            width: 100%;
+            text-align: left;
+        }
+
+        .alertError i{
+            font-size: 15px;
+            padding: 15px;
+            padding-right: 5px;
+        }
+
+        .alertUser, .alertEmail, .alertPassword, .alertCadastro{
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #000;
+            background-color: #d2ffdd;
+            margin: 0 auto;
+            width: 100%;
+            text-align: left;
+        }
+
+        .alertUser, .alertEmail, .alertPassword{
+            font-size: 13px;
+        }
+
+        .alertUser i, .alertEmail i, .alertPassword i{
+            font-size: 13px;
+            padding: 15px;
+            padding-right: 5px;
+        }
+        
+        .alertCadastro i{
+            font-size: 15px;
+            padding: 15px;
+            padding-right: 5px;
+        } 
+
+        .dadosCadastro{
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #000;
+            padding: 0;
+            margin: 10% auto;
+            width: 70%;
+            text-align: center;
+        }
+
+        .dadosCadastro i{
+            padding: 15px;
+            font-size: 40px;
+            color: #08f142;
+        }
+
+        .dadosCadastro a{
+            text-decoration: none;
+            color: rgb(2, 98, 223);
+        }
+
+        .dadosCadastro a:hover{
+            text-decoration: none;
+            color: rgb(45, 163, 184);
+        }
+
+        .corrigeDisplay{
+            display: inline-block;
+            
+        }
+
+        .corrigeDisplay ul{
+            list-style-type: none;
+        }
+
+        @media screen and (max-width: 500px) {
+
+            .alertUser, .alertEmail, .alertPassword {
+                font-size: 10px;
+            }
+
+            .alertUser i, .alertEmail i, .alertPassword i{
+                font-size: 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="header">
+        <p><img src="{% static 'images/logo-django.png' %}" /></p>
+    </div>
+
+        {% if form.errors %}
+            <div class="alertError">
+                <i class="fas fa-exclamation-circle"></i>
+                Não foi possível realizar o cadastro! 
+            </div>
+            <div class="alertUser">
+                {% if form.username.errors %}
+                    <i class="fas fa-user"></i>
+                    <div class="corrigeDisplay">
+                        {{ form.username.errors }}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="alertEmail">
+                {% if form.email.errors %}     
+                    <i class="fas fa-envelope"></i>
+                    <div class="corrigeDisplay"> 
+                        {{ form.email.errors }}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="alertPassword">
+                {% if form.password2.errors %}
+                    <i class="fas fa-key"></i>
+                    <div class="corrigeDisplay"> 
+                        {{ form.password2.errors }}
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% if form.is_valid %}
+            <div class="alertSucess">
+                <i class="fas fa-check-circle"></i>
+                Cadastro realizado sucesso! 
+            </div>
+
+            <div class="dadosCadastro">
+                <i class="far fa-check-circle"></i> 
+                <p> 
+                    Parabéns <b>{{ form.first_name.value }} {{ form.last_name.value }},</b>
+                </p>
+                </br>
+                <p>
+                    Seu cadastro foi finalizado, foi enviado o link de ativação para o <b>e-mail: {{ form.email.value }}.</b>
+                </p>
+                <p>
+                    Após ativar o cadastro utilize seu usuário<b> {{ form.username.value }}</b> para realizar o <a href="/login/"><b>login</b></a>.
+                </p>
+            </div>
+            
+        {% else %}
+
+        {% if not form.errors %}
+
+        <div class="alertCadastro">
+            <i class="fas fa-edit"></i>
+            Preencha os campos para realizar o cadastro!
+        </div>
+
+        {% endif %}
+
+        <div class="container">  
+
+            <form action="{% url 'accounts:register' %}" method="post">
+                {% csrf_token %}
+                        
+                    
+                    <div>{{ form.username }}</div>
+                    <div>{{ form.first_name }}</div>
+                    <div>{{ form.last_name }}</div>
+                    <div>{{ form.email }}</div>
+                    <div>{{ form.password1 }}</div>
+                    <div>{{ form.password2 }}</div>
+        
+        
+                    <div>
+                        <input type="submit" name="acao" value="Cadastrar" />
+                    </div>
+        
+                    <div class="links"><i class="fas fa-sign-in-alt"></i><a href="/">Ir para Login</a></div>
+                    
+            </form>
+        
+        </div>
+
+        {% endif %}
+
+</body>
+
+</html>
