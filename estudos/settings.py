@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+from django.db.backends.mysql.base import DatabaseWrapper
+
+DatabaseWrapper.data_types['DateTimeField'] = 'datetime' # fix for MySQL 5.5
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -86,12 +90,15 @@ WSGI_APPLICATION = 'estudos.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_portaldjango',
-        'USER': 'root',
-        'PASSWORD': 'django2020',
-        'HOST': 'portaldjango.herokuapp.com', #or an IP Address that your DB is hosted on
+        'NAME': 'heroku_721fd57aff53fa4',
+        'USER': 'b3292549ca01b7',
+        'PASSWORD': '18128c45',
+        'HOST': 'us-cdbr-east-02.cleardb.com', #or an IP Address that your DB is hosted on
         'PORT': '3306',
-    }
+        'OPTIONS': {
+                'init_command': 'SET default_storage_engine=INNODB',
+            },
+        }
 }
 
 
